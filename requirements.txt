@@ -6,4 +6,4 @@ numpy==1.21.2
 imread-from-url>=0.1,<0.2
 onnxruntime-gpu==1.8.0
 cap_from_youtube>=0.0.2,<0.1
-
+gunicorn
