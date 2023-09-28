@@ -25,10 +25,10 @@ class_names =  ['Aloevera','Amla',
 # =======================>Login Start<====================================================================================
 # MySQL database configuration
 db = pymysql.connect(
-    host='localhost',
-    user='root',
-    password='',
-    database='prototype'
+    host='Anjisnu.mysql.pythonanywhere-services.com',
+    user='Anjisnu',
+    password='9883185166A',
+    database='Anjisnu$prototype'
 )
 # Initialize Flask-Login
 login_manager = LoginManager()
