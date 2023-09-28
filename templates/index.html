@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayurdava</title>
+    <link rel="icon" href="static/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<style>
+    /* styles.css */
+    @import url('https://fonts.googleapis.com/css2?family=Dosis&family=Hammersmith+One&display=swap');
+    * {
+        padding: 0px;
+        margin: 0px;
+        overflow-x: hidden;
+        font-family: 'Dosis', sans-serif;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #F3DFD6;
+        padding: 10px 20px;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 60px;
+        width: auto;
+        margin-right: 10px; /* Add margin to separate logo and company name */
+    }
+
+    .company-name h1 {
+        font-size: 24px;
+        font-weight: bold;
+        display: inline;
+        vertical-align: middle;
+        color: #000;
+    }
+
+    .navbar-center {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .nav-item {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        font-size: 16px;
+        padding-left:20px;
+        padding-right:20px;
+        box-sizing: border-box;
+    }
+
+    .nav-item img {
+        height: 30px;
+        width: auto;
+        margin-right: 5px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .settings img {
+        height: 30px;
+        width: auto;
+        margin-right: 5px;
+    }
+    .account{
+        height: 40px;
+        width: 80px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .account a {
+
+        text-decoration: none;
+        color: #188D07;
+        font-weight: bold;
+        font-size: 18px;
+        padding-right: 10px;
+        overflow: hidden;
+    }
+
+    .nav-links a:hover {
+        color: #188D07; /* Change the color on hover */
+    }
+
+    a {
+        text-decoration: none;
+        color: #000000;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 70;
+        line-height: 18px; /* 60% */
+        text-transform: uppercase;
+    }
+ 
+    .footer{
+        background: #F3DFD6;
+        width: 100%;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        overflow: none;
+    }
+    .head3{
+        color: #7D7A93;
+        text-align: center;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 24px; /* 46.154% */
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-top: 40px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    .sociallogo{
+        padding: 20px;
+    }
+    .sociallogo img{
+        padding-left: 10px;
+    }
+    .credits{
+        padding-bottom: 5px;
+        overflow: hidden;
+    }
+    .us{
+        color: #0B3A2E;
+
+font-size: 28px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+    }
+    .app{
+        height: 450px;
+        background-color: #F3DFD6;
+        background-image: url('static/images/Homebg.png');
+        background-size: cover;
+    }
+    .applec{
+        display: flex;
+        width: 50%;
+        height: 450px;
+        justify-content: center;
+        align-items: center;
+    }
+    .box1{
+        height: 360px;
+        width: 400px;
+        border-radius: 35px;
+        background: rgba(255, 255, 255, 0.78);
+        backdrop-filter: blur(9px);
+    }
+    .heading1{
+        padding: 5px;
+        margin-left: 20px;
+        margin-top: 20px;
+        color: #215D0E;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+    .detail1{
+       box-sizing: border-box;
+        margin-left: 25px;
+        color: #215D0E;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+    .line{
+       
+        color: #666;
+        width: 83%;
+    }
+    .detail2{
+        padding: 5px;
+        margin-left: 20px;
+        color: #4F4F4F;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 31.2px; /* 97.5% */
+    }
+    .store{
+        margin: 20px;
+        display: flex;
+        width: 80%;
+        height: 80px;
+        align-items: center;
+    }
+    .desc{
+        display: flex;
+        width: 100vw;
+        height: 400px;
+        justify-content: center;
+        align-items: center;
+    }
+    .desc1{
+        width: 600px;
+        height: 200px;
+        color: #7D7A93;
+        text-align: center;
+        font-size: 45px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        
+    }
+    .heading5{
+    width: 70%;
+    margin-left: 50px;
+    box-sizing: border-box;
+    color: #188D07;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 81px;
+    letter-spacing: -3px;
+    }
+    .details5{
+        
+        width: 60%;
+        margin-left: 50px;
+        margin-right: 10px;
+        box-sizing: border-box;
+        color: #4F4F4F;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+    .whatisinside{
+        height: 800px;
+        width: 100vw;
+        background-image: url('static/images/designed_home.png');
+        background-size: 700px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .inside{
+        display: flex;
+        height: 400px;
+        width: 100vw;
+        
+     
+    }
+    .heading6{
+        margin: 50px;
+        box-sizing: border-box;
+        color: #FDBF2D;
+        font-size: 44px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 81px; /* 56.25% */
+        letter-spacing: -3px;
+    }
+    .imageleaf{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .detail6papa{
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .details6{
+        text-align: center;
+   
+    color: #4F4F4F;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    }
+/* Responsive navbar */
+.mobile-menu-button {
+    display: none; /*Initially hide the button */
+    cursor: pointer;
+    padding: 10px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* Style for when the button is active (menu is open) */
+.mobile-menu-button.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.mobile-menu-button.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-button.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+@media screen and (max-width: 768px) {
+    .mobile-menu-button {
+        display: block;
+    }
+    
+    .navbar-center
+    {
+        display: none; /* Hide both navigation elements by default */
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 60px; /* Adjust this value based on your design */
+        left: 0;
+        right: 0;
+        border-radius: 35px;
+        background: rgba(255, 255, 255, 0.83);
+        backdrop-filter: blur(9px);
+        z-index: 1;
+        transition: 0.5s;
+        height: 460px;
+    }
+    .navbar-right
+    {
+        display: none; /* Hide both navigation elements by default */
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 440px; /* Adjust this value based on your design */
+        left: 0;
+        right: 0;
+        z-index: 1;
+        transition: 0.5s;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-radius: 35px;
+        
+      
+    }
+    .navbar-center.active
+    {
+        display: flex; /* Show the navigation elements when active */
+        width: 50%;
+        height: 440px;
+        transform: translateX(100%); /* Center the menu horizontally */
+        right: 0; /* Position it to the right */
+    }
+    .navbar-right.active
+    {
+        display: flex; /* Show the navigation elements when active */
+        width: 50%;
+        
+        transform: translateX(100%); /* Center the menu horizontally */
+        right: 0; /* Position it to the right */
+    }
+    /* Style the mobile menu links */
+    .nav-item {
+        margin: 10px;
+        padding-top: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Style for the mobile menu button when active */
+    .mobile-menu-button.active + .navbar-center,
+    .mobile-menu-button.active + .navbar-right {
+        display: flex; /* Show both navbar-center and navbar-right when active */
+    }
+    /* bg image resposive */
+    .app{
+        height: 400px;
+        background-color: #F3DFD6;
+        background-image: url('static/images/Homebg.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        overflow: hidden;
+    }
+    .applec{
+        display: flex;
+        width: 80%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .box1{
+        margin-top: 10px;
+        height: 330px;
+        width: 100%;
+        border-radius: 35px;
+        background: rgba(255, 255, 255, 0.78);
+        backdrop-filter: blur(9px);
+        overflow: hidden;
+    }
+    .heading1{
+        padding: 5px;
+        margin-left: 20px;
+        margin-top: 20px;
+        color: #215D0E;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+    .detail1{
+       box-sizing: border-box;
+        margin-left: 25px;
+        color: #215D0E;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+    .line{
+       
+        color: #666;
+        width: 83%;
+    }
+    .detail2{
+        padding-left:5px ;
+        color: #4F4F4F;
+        font-size:18px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 31.2px; /* 97.5% */
+    }
+    .store{
+        
+        padding-left: 5px;
+        display: flex;
+        width: 80%;
+        height: 50px;
+        align-items: center;
+    }
+    /* Description part */
+    .desc{
+        display: flex;
+        width: 100vw;
+        height: 250px;
+        justify-content: center;
+        align-items: center;
+    }
+    .desc1{
+        margin-top: 5px;
+        width: 600px;
+        height: 200px;
+        color: #7D7A93;
+        text-align: center;
+        font-size: 35px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        
+    }
+    /* HOw */
+    .heading5{
+        width: 70%;
+        margin-left: 20px;
+        box-sizing: border-box;
+        color: #188D07;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 81px;
+        letter-spacing: -1px;
+    }
+    .details5{
+        width: 80%;
+        margin-left: 50px;
+        margin-right: 10px;
+        box-sizing: border-box;
+        color: #4F4F4F;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+    /* whats inside */
+    .whatisinside{
+        height: 600px;
+        width: 100vw;
+        background-image: url('static/images/designed_home.png');
+        background-size: 500px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .inside{
+        display: flex;
+        height: 400px;
+        width: 100vw; 
+    }
+    .heading6{
+        margin-left: 20px;
+        box-sizing: border-box;
+        color: #FDBF2D;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 51px; /* 56.25% */
+        letter-spacing: -3px;
+    }
+    .imageleaf{
+        width: 50%; 
+    }
+    .detail6papa{
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .details6{
+        text-align: center;
+        color: #4F4F4F;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+    /* Footer */
+    .head3{
+        color: #7D7A93;
+        text-align: center;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 24px; /* 46.154% */
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-top: 40px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    .sociallogo{
+        padding: 20px;
+        overflow: hidden;
+    }
+    .sociallogo img{
+        padding-left: 10px;
+        overflow: hidden;
+    }
+    .credits{
+        padding-bottom: 5px;
+        overflow: hidden;
+    }
+    .us{
+        color: #0B3A2E;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        overflow: hidden;
+    }
+    
+    
+}
+
+</style>
+<body>
+
+    <!-- Navigation bar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="static\images\logo.png" alt="Company Logo" height="60px" width="60px">
+                </div>
+                <div class="company-name">
+                    <h1>Ayurdava</h1>
+                </div>
+            </div>
+        </div>
+        <div class="navbar-center">
+
+            <div class="nav-item">
+                <img src="static\images\25694.png" alt="Person Logo">
+                <a href="/">Home</a>
+            </div>
+
+            <div class="nav-item">
+                <img src="static\images\person.svg" alt="Person Logo">
+                <a href="/whoweare">Who we are</a>
+            </div>
+
+            <div class="nav-item">
+                <img src="static\images\search.svg" alt="Magnifying Glass Logo">
+                <a href="/landing">Identify</a>
+            </div>
+
+            <div class="nav-item">
+                <img src="static\images\pricing2.png" alt="Person Logo">
+                <a href="#">Pricing</a>
+            </div>
+            
+            <div class="nav-item">
+                <img src="static\images\Marketplace.svg" alt="Marketplace Logo" height="30px">
+                <a href="#">Marketplace</a>
+            </div>
+        </div>
+        
+        <div class="navbar-right-2">
+            <div class="mobile-menu-button">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="navbar-right">
+            <div class="account">
+                <a href="/login">Sign in</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Box of app web with bg -->
+    <div class="app" >
+        <div class="applec" data-aos="flip-left">
+            <div class="box1">
+                <div class="heading1" data-aos="fade-right">
+                    An AI driven plant scanner
+                </div>
+                <div class="detail1" data-aos="fade-right">
+                    where nature and technology live in harmony
+                   <div class="line" data-aos="fade-right"> <hr></div>
+                </div>
+                <div class="detail2" data-aos="fade-right">
+                    Identify plants,leaves,flowers, cacti, succulents and mushrooms in
+                    seconds with the click of a button on your mobile device.
+                </div>
+                <div class="store" data-aos="fade-right">
+                        <div class="play">
+                            <img src="static/images/google_play.png.png" alt="" width="70%">
+                        </div>
+                        <div class="ios">
+                            <img src="static/images/app_store.png.png" alt="" width="70%">
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Desc of out app -->
+    <div class="desc">
+        <div class="desc1" data-aos="fade-down">
+            <strong style="font-weight: 800;">Ayurdava</strong> is an AI driven,
+            comprehensive plant
+            identification web-app!
+        </div>
+    </div>
+<!-- Ḥow it works -->
+
+    <div class="how">
+        <div class="heading5">
+            How it works?
+        </div>
+        <div class="details5" data-aos="fade-in">
+            To identify a plant you simply need to simply snap a photo of the
+            plant, and the app will tell you what it is in a matter of seconds!
+            Ayurdava can currently recognize a small amount of
+            medicinal plants..
+        </div>
+    </div>
+
+    <!-- Whats inside -->
+    <div class="heading6">
+        What's inside ?
+    </div>
+    <div class="whatisinside">
+
+    <div class="inside">
+        
+        <div class="imageleaf" data-aos="flip-left">
+            <img src="static/images/mobile 1.png" alt="" height="300px" width="250px">
+        </div>
+        <div class="detail6papa">
+            <div class="details6" data-aos="fade-in">
+                Identify a plant by simply taking a snap of the
+                plant, and the app will tell you what it is in a matter of seconds!
+                Ayurdava can currently recognize a small amount of
+                medicinal plants
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Designed image -->
+
+<!-- Footer -->
+   <div class="footer">
+        <div class="head3">
+           Let's get social
+           <hr>
+        </div>
+        <div class="sociallogo">
+                <img src="static\images\Google vec.svg" alt="" height="30px" width="30px"> 
+                <img src="static\images\faceboook vec.svg" alt=""height="30px" width="30px">
+        </div>
+        <div class="credits">
+           Developed by
+        </div>
+        <div class="us">
+            Team Phytomind
+        </div>
+   </div>
+
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+   <script>
+     AOS.init(
+     {
+        offset: 100,
+        duration: 1000,
+
+     });
+   </script>
+   <script>
+   $(document).ready(function() {
+       // Toggle the active class on the mobile menu button when clicked
+       $(".mobile-menu-button").click(function() {
+           $(this).toggleClass("active");
+           $(".navbar-center, .navbar-right").toggleClass("active");
+       });
+   });
+   </script>
+
+
+</body>
+</html>

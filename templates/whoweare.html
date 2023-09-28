@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayurdava</title>
+    <link rel="icon" href="static/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<style>
+    /* styles.css */
+    @import url('https://fonts.googleapis.com/css2?family=Dosis&family=Hammersmith+One&display=swap');
+    * {
+        padding: 0px;
+        margin: 0px;
+        overflow-x: hidden;
+        font-family: 'Dosis', sans-serif;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #F3DFD6;
+        padding: 10px 20px;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 60px;
+        width: auto;
+        margin-right: 10px; /* Add margin to separate logo and company name */
+    }
+
+    .company-name h1 {
+        font-size: 24px;
+        font-weight: bold;
+        display: inline;
+        vertical-align: middle;
+        color: #000;
+    }
+
+    .navbar-center {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .nav-item {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        font-size: 16px;
+        padding-left:20px;
+        padding-right:20px;
+        box-sizing: border-box;
+    }
+
+    .nav-item img {
+        height: 30px;
+        width: auto;
+        margin-right: 5px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .settings img {
+        height: 30px;
+        width: auto;
+        margin-right: 5px;
+    }
+    .account{
+        height: 40px;
+        width: 80px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .account a {
+        text-decoration: none;
+        color: #188D07;
+        font-weight: bold;
+        font-size: 18px;
+        padding-right: 10px;
+        overflow: hidden;
+    }
+
+    .nav-links a:hover {
+        color: #188D07; /* Change the color on hover */
+    }
+
+    a {
+        text-decoration: none;
+        color: #000000;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 70;
+        line-height: 18px; /* 60% */
+        text-transform: uppercase;
+    }
+ 
+    .footer{
+        background: #F3DFD6;
+        width: 100%;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        overflow: none;
+    }
+    .head3{
+        color: #7D7A93;
+        text-align: center;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 24px; /* 46.154% */
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-top: 40px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    .sociallogo{
+        padding: 20px;
+    }
+    .sociallogo img{
+        padding-left: 10px;
+    }
+    .credits{
+        padding-bottom: 5px;
+        overflow:hidden ;
+
+    }
+    .us{
+        color: #0B3A2E;
+font-size: 28px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+    }
+    .app{
+        height: 450px;
+        background-color: #F3DFD6;
+        background-image: url('static/images/Homebg.png');
+        background-size: cover;
+    }
+    .applec{
+        display: flex;
+        width: 50%;
+        height: 450px;
+        justify-content: center;
+        align-items: center;
+    }
+    .box1{
+        height: 360px;
+        width: 400px;
+        border-radius: 35px;
+        background: rgba(255, 255, 255, 0.78);
+        backdrop-filter: blur(9px);
+    }
+    .heading1{
+        padding: 5px;
+        margin-left: 20px;
+        margin-top: 20px;
+        color: #215D0E;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+    .detail1{
+       box-sizing: border-box;
+        margin-left: 25px;
+        
+        color: #215D0E;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+    .line{
+       color: #666;
+       width: 83%;
+    }
+    .detail2{
+        padding: 5px;
+        margin-left: 20px;
+        color: #4F4F4F;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 31.2px; /* 97.5% */
+    }
+    .store{
+        margin: 20px;
+        display: flex;
+        width: 80%;
+        height: 80px;
+        align-items: center;
+    }
+    .desc{
+        display: flex;
+        width: 100vw;
+        height: 400px;
+        justify-content: center;
+        align-items: center;
+    }
+    .desc1{
+        width: 600px;
+        height: 200px;
+        color: #7D7A93;
+        text-align: center;
+        font-size: 45px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+    .heading3{
+        margin-left: 50px;
+        color: #7D7A93;
+        font-size: 60px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+        letter-spacing: -3px;
+    }
+    .who{
+        display: flex;
+        margin: 20px;
+        margin-left: 50px;
+        box-sizing: border-box;
+        width: 90vw;
+        height: 400px;
+        align-items:center;
+        justify-content: center;
+    }
+    .desc4{
+        width: 50%;
+        color: #4F4F4F;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        text-align: start;
+    }
+    .diagram1{
+        display:flex;
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+    }
+    .whopart2{
+        display: flex;
+        margin: 20px;
+        box-sizing: border-box;
+        height: 400px;
+    }
+    .part1{
+        height: 300px;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .part2{
+        height: 300px;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 20px;
+        
+    }
+    .part3{
+        color: #86B655;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        align-items: center;
+        justify-content:last baseline;
+        text-align:center;
+        height: 160px;
+        width: 25%;
+    }
+    .part4{
+        color: #7D7A93;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        height: 150px;
+        width: 30%;
+    }
+    .headingblock{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .heading4{
+        color: #7D7A93;
+        text-align: center;
+        font-size: 60px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+        letter-spacing: -3px;
+        width: 400px;
+    }
+    .whatsetsusapart{
+        height: 400px;
+        display: flex;
+        margin: 30px;
+        box-sizing: border-box;
+        
+        align-items: center;
+    }
+    .first{
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+    }
+    .heading5{
+        color: #FFDB43;
+        text-align: right;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 40px; 
+        
+    }
+    .text2{
+        color: #4F4F4F;
+        text-align: right;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+    .diagram2{
+        display: flex;
+        width: 30%;
+        justify-content: center;
+        align-items: center;
+    }
+    .second{
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+    }
+    .heading6{
+        color: #FFDB43;
+        text-align: left;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 40px; 
+        
+    }
+    .text3{
+        color: #4F4F4F;
+        text-align: left;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+/* Responsive navbar */
+.mobile-menu-button {
+    display: none; /*Initially hide the button */
+    cursor: pointer;
+    padding: 10px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* Style for when the button is active (menu is open) */
+.mobile-menu-button.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.mobile-menu-button.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-button.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+@media screen and (max-width: 768px) {
+    .mobile-menu-button {
+        display: block;
+    }
+    
+    .navbar-center
+    {
+        display: none; /* Hide both navigation elements by default */
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 60px; /* Adjust this value based on your design */
+        left: 0;
+        right: 0;
+        border-radius: 35px;
+        background-color: rgba(255, 255, 255, 0.83);
+        backdrop-filter: blur(9px);
+        z-index: 1;
+        transition: 0.5s;
+    }
+    .navbar-right
+    {
+        display: none; /* Hide both navigation elements by default */
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 440px; /* Adjust this value based on your design */
+        left: 0;
+        right: 0;
+        z-index: 1;
+        transition: 0.5s;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-radius: 35px;
+    }
+    .navbar-center.active
+    {
+        display: flex; /* Show the navigation elements when active */
+        width: 50%;
+        height: 440px;
+        transform: translateX(100%); /* Center the menu horizontally */
+        right: 0; /* Position it to the right */
+    }
+    .navbar-right.active
+    {
+        display: flex; /* Show the navigation elements when active */
+        width: 50%;
+        
+        transform: translateX(100%); /* Center the menu horizontally */
+        right: 0; /* Position it to the right */
+    }
+    /* Style the mobile menu links */
+    .nav-item {
+        margin: 10px;
+        padding-top: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Style for the mobile menu button when active */
+    .mobile-menu-button.active + .navbar-center,
+    .mobile-menu-button.active + .navbar-right {
+        display: flex; /* Show both navbar-center and navbar-right when active */
+    }
+    /* bg image resposive */
+    .app{
+        height: 400px;
+        background-color: #F3DFD6;
+        background-image: url('static/images/Homebg.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        overflow: hidden;
+    }
+    .applec{
+        display: flex;
+        width: 80%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .box1{
+        margin-top: 10px;
+        height: 330px;
+        width: 100%;
+        border-radius: 35px;
+        background: rgba(255, 255, 255, 0.78);
+        backdrop-filter: blur(9px);
+        overflow: hidden;
+    }
+    .heading1{
+        padding: 5px;
+        margin-left: 20px;
+        margin-top: 20px;
+        color: #215D0E;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+    .detail1{
+       box-sizing: border-box;
+        margin-left: 25px;
+        color: #215D0E;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+    .line{
+       
+        color: #666;
+        width: 83%;
+    }
+    .detail2{
+        padding-left:5px ;
+        color: #4F4F4F;
+        font-size:18px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 31.2px; /* 97.5% */
+    }
+    .store{
+        
+        padding-left: 5px;
+        display: flex;
+        width: 80%;
+        height: 50px;
+        align-items: center;
+    }
+    /* Descrption part */
+    .desc{
+        display: flex;
+        width: 100vw;
+        height: 250px;
+        justify-content: center;
+        align-items: center;
+    }
+    .desc1{
+        margin-top: 5px;
+        width: 600px;
+        height: 200px;
+        color: #7D7A93;
+        text-align: center;
+        font-size: 35px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        
+    }
+    /* Our story */
+    .heading3{
+        margin-left: 20px;
+        color: #7D7A93;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+        letter-spacing: -3px;
+    }
+    .who{
+        display: flex;
+        margin: 20px;
+        margin-left: 30px;
+        box-sizing: border-box;
+        width: 90vw;
+        height: 500px;
+        align-items:center;
+        justify-content: center;
+        flex-direction:column-reverse;
+    }
+    .desc4{
+        width: 80%;
+        color: #4F4F4F;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        text-align: start;
+    }
+    .diagram1{
+        display:flex;
+        width: 80%;
+        height: 300px;
+        justify-content: center;
+        align-items: center;
+
+    }
+    /* WHo part2 */
+    .whopart2{
+        display: flex;
+        margin: 20px;
+        box-sizing: border-box;
+        height: 400px;
+    }
+    .part1{
+        height: 300px;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .part2{
+        height: 300px;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 20px;
+        
+    }
+    .part3{
+        color: #86B655;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        align-items: center;
+        justify-content:last baseline;
+        text-align:center;
+        height: 160px;
+        width: 85%;
+    }
+    .part4{
+        color: #7D7A93;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        height: 150px;
+        width: 80%;
+    }
+    .headingblock{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .heading4{
+        color: #7D7A93;
+        text-align: center;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+        letter-spacing: -1px;
+        width: 400px;
+    }
+    .whatsetsusapart{
+        height: 800px;
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+        box-sizing: border-box;
+        align-items: center;
+        box-sizing: border-box;
+        justify-content: space-between;
+    }
+    .first{
+        width: 85%;
+        display: flex;
+        flex-direction: column;
+    }
+    .heading5{
+        color: #FFDB43;
+        text-align: left;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal; 
+        
+    }
+    .text2{
+        color: #4F4F4F;
+        text-align: left;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+    .diagram2{
+        display: flex;
+        width: 85%;
+        justify-content: center;
+        align-items: center;
+    }
+    .second{
+        width: 85%;
+        display: flex;
+        flex-direction: column;
+    }
+    .heading6{
+        color: #FFDB43;
+        text-align: left;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal; 
+        
+    }
+    .text3{
+        color: #4F4F4F;
+        text-align: left;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+    /* Footer */
+    .head3{
+        color: #7D7A93;
+        text-align: center;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 24px; /* 46.154% */
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-top: 40px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    .sociallogo{
+        padding: 20px;
+        overflow: hidden;
+    }
+    .sociallogo img{
+        padding-left: 10px;
+        overflow: hidden;
+    }
+    .credits{
+        padding-bottom: 5px;
+        overflow: hidden;
+    }
+    .us{
+        color: #0B3A2E;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        overflow: hidden;
+    }
+    
+}
+</style>
+<body>
+
+    <!-- Navigation bar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="static\images\logo.png" alt="Company Logo" height="60px" width="60px">
+                </div>
+                <div class="company-name">
+                    <h1>Ayurdava</h1>
+                </div>
+            </div>
+        </div>
+        <div class="navbar-center">
+
+            <div class="nav-item">
+                <img src="static\images\25694.png" alt="Person Logo">
+                <a href="/">Home</a>
+            </div>
+
+            <div class="nav-item">
+                <img src="static\images\person.svg" alt="Person Logo">
+                <a href="/whoweare">Who we are</a>
+            </div>
+
+            <div class="nav-item">
+                <img src="static\images\search.svg" alt="Magnifying Glass Logo">
+                <a href="/landing">Identify</a>
+            </div>
+
+            <div class="nav-item">
+                <img src="static\images\pricing2.png" alt="Person Logo">
+                <a href="#">Pricing</a>
+            </div>
+
+            <div class="nav-item">
+                <img src="static\images\Marketplace.svg" alt="Marketplace Logo" height="30px">
+                <a href="#">Marketplace</a>
+            </div>
+        </div>
+        <div class="navbar-right-2">
+            <div class="mobile-menu-button">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="navbar-right">
+            <div class="account">
+                <a href="/login">Sign in</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Box of app web with bg -->
+    <div class="app">
+        <div class="applec" data-aos="flip-left">
+            <div class="box1" >
+                <div class="heading1" data-aos="fade-right">
+                    An AI driven plant scanner
+                </div>
+                <div class="detail1" data-aos="fade-right">
+                    where nature and technology live in harmony
+                   <div class="line" data-aos="fade-right"> <hr></div>
+                </div>
+                <div class="detail2" data-aos="fade-right">
+                    Identify plants,leaves,flowers, cacti, succulents and mushrooms in
+                    seconds with the click of a button on your mobile device.
+                </div>
+                <div class="store" data-aos="fade-right">
+                        <div class="play">
+                            <img src="static/images/google_play.png.png" alt="" width="70%">
+                        </div>
+                        <div class="ios">
+                            <img src="static/images/app_store.png.png" alt="" width="70%">
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Desc of out app -->
+    <div class="desc">
+        <div class="desc1" data-aos="fade-down">
+            <strong style="font-weight: 800;">Ayurdava</strong> is an AI driven,
+            comprehensive plant
+            identification web-app!
+        </div>
+    </div>
+<!-- who we are -->
+
+<div class="heading3" data-aos="fade-right">Our Story</div>
+<div class="who">
+        <div class="desc4" data-aos="fade-in">
+            Like all great ideas, Ayurdava started as our founder was traipsing
+            through a friend’s backyard in 2023 and wondered about the
+            identity of a plant he stumbled across. When they realized that no
+            one knew what it was, he found a problem he wanted to solve.
+            Unfortunately the technology just wasn’t quite up to snuff just yet.
+        </div>
+        <div class="diagram1" data-aos="fade-left">
+            <img src="static/images/bulb.png.png" alt="" height="60%" width="60%">
+        </div>
+</div>
+<div class="whopart2">
+    <div class="part1" data-aos="fade-right">
+        <img src="static/images/tech@2x.png.png" alt="" height="280px" width="200px">
+    </div>
+    <div class="part2">
+        <div class="part3" data-aos="fade-down">
+            When technology was up to
+            the task of building a plant
+            identifying app that would work
+            anywhere on Earth,
+            Ayurdava became a reality
+        </div>
+        <div class="part4" data-aos="fade-up">
+            Ayurdava is an AI driven,
+            comprehensive plant
+            identification web-app!
+        </div>
+    </div>
+</div>
+<!-- What sets us apart -->
+<div class="headingblock">
+    <div class="heading4">what sets us
+        apart</div>
+</div>
+
+<div class="whatsetsusapart">
+    <div class="first">
+        <div class="heading5" data-aos="fade-right">Instantaneous results</div>
+        <p class="text2" data-aos="fade-right">Most plant identifying apps can identify no
+            more than 10,000 species, at most. They
+            also use crowdsourcing to generate data
+            and that means it takes a lot of time, days,
+            maybe more, to get an opinion, this might
+            prove to be challenging or even frustrating.
+            Ayurdava has over 15,000 plants in our
+            searchable database, and it is translated into
+            37 languages. This means that Ayurdava
+            will work in any country on Earth, for 95% of
+            the global population.</p>
+    </div>
+    <div class="diagram2" data-aos="fade-in">
+        <img src="static/images/accurate-results@2x.png.png" alt="" height="300px" width="300px">
+    </div>
+    <div class="second">
+        <div class="heading6" data-aos="fade-left">No guess work involved</div>
+        <p class="text3" data-aos="fade-left">Here at Ayurdava we’ve managed to create
+            a system that allows you to upload a photo
+            and instantly get detailed information of the
+            snapped plant with no guesswork or human
+            interaction involved. In addition, the iOS
+            version of Ayurdava uses new technology
+            called auto-detect and augmented reality.
+            Auto-detect actually tells you when to snap
+            the photo so that you get the perfect picture
+            every time. Augmented reality adds and
+            entire new level of immersion and education
+            into the Ayurdava experience.</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Footer -->
+   <div class="footer">
+        <div class="head3">
+           Let's get social
+           <hr>
+        </div>
+        <div class="sociallogo">
+                <img src="static\images\Google vec.svg" alt="" height="30px" width="30px"> 
+                <img src="static\images\faceboook vec.svg" alt=""height="30px" width="30px">
+        </div>
+        <div class="credits">
+           Developed by
+        </div>
+        <div class="us">
+            Team Phytomind
+        </div>
+   </div>
+   <!-- Animation -->
+   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+   <script>
+     AOS.init(
+     {
+        offset: 100,
+        duration: 1000,
+
+     });
+   </script>
+  <!-- Responsive navbar -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+  $(document).ready(function() {
+      // Toggle the active class on the mobile menu button when clicked
+      $(".mobile-menu-button").click(function() {
+          $(this).toggleClass("active");
+          $(".navbar-center, .navbar-right").toggleClass("active");
+      });
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayurdava</title>
+    <link rel="icon" href="static/images/logo.png" type="image/x-icon">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Dosis&family=Hammersmith+One&display=swap');
+    * {
+        padding: 0px;
+        margin: 0px;
+        font-family: 'Dosis', sans-serif;
+    }
+
+    .full{
+        width: 100%;
+        display: flex;
+        height: 100vh;
+    }
+    .left{
+        display: flex;
+        width: 50%;
+        flex-direction: column;
+    }
+    .right{
+        display: flex;
+        background: #F3DFD6;
+        width: 50%;
+        flex-direction: column;
+    }
+    .tex{
+        color: #222D39;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 48px; /* 150% */
+        width: 286px;
+        box-sizing: border-box;
+        margin-left: 30px;
+        margin-top: 30px;
+    }
+    .im1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .heading1{
+        color: #222D39;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 60;
+        line-height: 32px; /* 62.745% */
+        box-sizing: border-box;
+        margin-top: 50px;
+        margin-left: 50px;  
+    }
+    .login{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       height: 100vh;
+        
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+    color: rgba(62, 72, 84, 0.50);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 80% */
+    border-radius: 4px;
+    background: #FFF;
+    height: 300px;
+    width: 500px;
+    padding-top: 30px;
+    }
+    input[type=text],
+    input[type=password]{
+        padding-top: 10px;
+        display: flex;
+        width: 200pxpx;
+        height: 27px;
+        padding: 12px 16px;
+        align-items: center;
+        gap: 108px;
+        flex-shrink: 0;
+        border-radius: 4px;
+        border: 1px solid rgba(62, 72, 84, 0.30);
+        background: #FFF;
+    }
+    input[type=submit]{
+        display: flex;
+        width: 500px;
+        height: 50px;
+        padding: 12px 120px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+        border-radius: 17px;
+        border: 1px solid #188D07;
+        background: #188D07;
+        color: white;
+    }
+    a{
+        text-decoration: none;
+        color: #188D07;
+    }
+    
+    @media screen and (max-width: 768px){
+    
+    body{
+            background-color:#F3DFD6;
+    }
+    .left{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        z-index: 2;
+    }
+    .right{
+        display: flex;
+        background: #F3DFD6;
+        width: 100%;
+        flex-direction: column;
+    }
+    .login{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+    }
+    .heading1{
+        color: #222D39;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 60;
+        line-height: 32px; /* 62.745% */
+        box-sizing: border-box;
+        margin-top: 50px;
+         
+        width: 400px;
+        margin-top: 190px;
+        
+        position: relative;
+        top: 270px;
+        left: 60px;
+        z-index: 2;
+        
+
+    }
+   
+    form{
+        display: flex;
+        flex-direction: column;
+        color: black;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px; /* 80% */
+        border-radius: 35px;
+        background: rgba(255, 255, 255, 0.78);
+        backdrop-filter: blur(9px);
+        height: 400px;
+        width: 400px;
+        padding-top: 30px;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 100px;
+        justify-content: center;
+        align-items: center;
+    }
+    input[type=text],
+    input[type=password]{
+        padding-top: 10px;
+        display: flex;
+        width: 200px;
+        height: 17px;
+        padding: 12px 16px;
+        align-items: center;
+        gap: 108px;
+        flex-shrink: 0;
+        border-radius: 4px;
+        border: 1px solid rgba(62, 72, 84, 0.30);
+        background: #FFF;
+    }
+    input[type=submit]{
+        display: flex;
+        width: 200px;
+        height: 50px;
+        padding: 12px 120px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+        border-radius: 17px;
+        border: 1px solid #188D07;
+        background: #188D07;
+        color: white;
+    }
+    }
+    
+ 
+</style>
+<body>
+
+<div class="full">
+    <div class="left">
+            <div class="heading1">
+                <h1>Sign in</h1>
+               
+                <p>Dont have an account?<a href="/signup">Sign up</a></p>
+            </div>
+
+            <div class="login">
+                <form action="/login" method="POST">
+                        <label for="email">Email</label><br>
+                        <input type="text" id="email" name="email" placeholder="eg: abc@gmail.com"><br>
+                        
+                        <label for="password">Password</label><br>
+                        <input type="password" id="password" name="password" placeholder="Enter your password"><br>
+                        
+                        <label for="keep-me-signed-in">
+                            <input type="checkbox" id="keep-me-signed-in" name="keep-me-signed-in"> Keep me signed in
+                        </label><br>
+
+                        <input type="submit" value="Log In">
+
+                    </form>
+            </div>
+    </div>
+
+    <div class="right">
+        <div class="tex">
+            Get the plant info's’ right at your fingertips
+        </div>
+        <div class="im1">
+            <img src="static/images/Login.png" alt="No image" height="400px" width="400px">
+        </div>
+
+    </div>
+</div>
+
+
+
+</body>
+</html>

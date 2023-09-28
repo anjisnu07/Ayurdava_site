@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayurdava</title>
+    <link rel="icon" href="static/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<style>
+    /* styles.css */
+    @import url('https://fonts.googleapis.com/css2?family=Dosis&family=Hammersmith+One&display=swap');
+    * {
+        padding: 0px;
+        margin: 0px;
+        font-family: 'Dosis', sans-serif;
+       
+    }
+    body{
+        height: 100vh;
+        width: 100%;
+    }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #F3DFD6;
+        padding: 10px 20px;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 60px;
+        width: auto;
+        margin-right: 10px; /* Add margin to separate logo and company name */
+    }
+
+    .company-name h1 {
+        font-size: 24px;
+        font-weight: bold;
+        display: inline;
+        vertical-align: middle;
+        color: #000;
+    }
+
+    .navbar-center {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .nav-item {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        font-size: 16px;
+        padding-left:20px;
+        padding-right:20px;
+        box-sizing: border-box;
+    }
+
+    .nav-item img {
+        height: 30px;
+        width: auto;
+        margin-right: 5px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .settings img {
+        height: 30px;
+        width: auto;
+        margin-right: 5px;
+    }
+    
+
+    .account a {
+        text-decoration: none;
+        color:white ;
+        font-weight: bold;
+        font-size: 14px;
+        border: 2px solid green;
+        padding: 10px;
+        border-radius: 30px;
+        background-color:#188D07;
+    }
+
+    .nav-links a:hover {
+        color: #188D07; /* Change the color on hover */
+    }
+
+    a {
+        text-decoration: none;
+        color: #000000;
+       
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 70;
+        line-height: 18px; /* 60% */
+        /* text-transform: uppercase; */
+    }
+    /* ins */
+    .ins{
+        background-image: url('static/images/16399218_v986-bg-08d.png');
+        background-size: cover;
+    }
+    .heading{
+        color: #565656;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 70;
+        line-height: normal;
+        box-sizing: border-box;
+        padding-top: 10px;
+        padding-left: 30px;
+    }
+    .focus{
+        width: 50vw;
+        height: 70px;
+        flex-shrink: 0;
+        border-radius: 10px;
+        background: #BFE1F5;
+        box-sizing: border-box;
+        margin-left: 30px;
+        margin-top: 10px;
+        display: flex;
+    }
+    .head1{
+        width: 40%;
+      
+        color: #0B3A2E;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        padding: 10px;
+    }
+    .det1{
+        color: #0B3A2E;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 50;
+        line-height: normal;
+        padding: 10px;
+    }
+    .upload{
+        display: flex;
+        
+        box-sizing: border-box;
+        height: 200px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    input[type=submit]{
+        width: 150px;
+        height: 57px;
+        flex-shrink: 0;
+        border-radius: 50px;
+        background: #215D0E;
+        color: #FFF;
+        text-align: center;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+    input[type=file]{
+        height: 70px;
+        color: #188D07;
+    }
+    .footer{
+        background: #F3DFD6;
+        width: 100%;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        overflow: none;
+    }
+    .head3{
+        color: #7D7A93;
+        text-align: center;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 24px; /* 46.154% */
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-top: 40px;
+        box-sizing: border-box;
+    }
+    .sociallogo{
+        padding: 20px;
+    }
+    .sociallogo img{
+        padding-left: 10px;
+    }
+    .credits{
+        padding-bottom: 5px;
+    }
+    .us{
+        color: #0B3A2E;
+font-size: 28px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+    }
+    .account2 a{
+        text-decoration: none;
+        color: red;
+        font-weight: bold;
+        font-size: 18px;
+    }
+/* Responsive navbar */
+.mobile-menu-button {
+    display: none; /*Initially hide the button */
+    cursor: pointer;
+    padding: 10px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* Style for when the button is active (menu is open) */
+.mobile-menu-button.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.mobile-menu-button.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-button.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+@media screen and (max-width: 768px) {
+    .mobile-menu-button {
+        display: block;
+    }
+    
+    .navbar-center
+    {
+        display: none; /* Hide both navigation elements by default */
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 60px; /* Adjust this value based on your design */
+        left: 0;
+        right: 0;
+        border-radius: 35px;
+        background: rgba(255, 255, 255, 0.83);
+        backdrop-filter: blur(9px);
+        z-index: 1;
+        transition: 0.5s;
+    }
+    .navbar-right
+    {
+        display: none; /* Hide both navigation elements by default */
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 440px; /* Adjust this value based on your design */
+        left: 0;
+        right: 0;
+        z-index: 1;
+        transition: 0.5s;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-radius: 35px;
+    }
+    .navbar-center.active
+    {
+        display: flex; /* Show the navigation elements when active */
+        width: 50%;
+        height: 440px;
+        transform: translateX(100%); /* Center the menu horizontally */
+        right: 0; /* Position it to the right */
+    }
+    .navbar-right.active
+    {
+        display: flex; /* Show the navigation elements when active */
+        width: 50%;
+        
+        transform: translateX(100%); /* Center the menu horizontally */
+        right: 0; /* Position it to the right */
+    }
+    /* Style the mobile menu links */
+    .nav-item {
+        margin: 10px;
+        padding-top: 20px;
+        width: 100%;
+        text-align: center;
+    }
+    .account a {
+        text-decoration: none;
+        color:green ;
+        font-weight: bold;
+        font-size: 14px;
+        border: 0px solid rgba(255, 255, 255, 0.83);
+        padding: 0px;
+        border-radius: 0px;
+        background-color:rgba(255, 255, 255, 0.83);
+        backdrop-filter: blur(9px);
+        
+    }
+
+    /* Style for the mobile menu button when active */
+    .mobile-menu-button.active + .navbar-center,
+    .mobile-menu-button.active + .navbar-right {
+        display: flex; /* Show both navbar-center and navbar-right when active */
+    }
+    /* ins box */
+    .focus{
+        width: 90%;
+        height: 70px;
+        flex-shrink: 0;
+        border-radius: 10px;
+        background: #BFE1F5;
+        box-sizing: border-box;
+        margin-left: 10px;
+        margin-top: 20px;
+        display: flex;
+    }
+    .head1{
+        width: 40%;
+        color: #0B3A2E;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        padding: 10px;
+    }
+    .det1{
+        color: #0B3A2E;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 50;
+        line-height: normal;
+        padding: 10px;
+    }
+    .upload{
+        display: flex;
+        box-sizing: border-box;
+        height: 300px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    input[type=submit]{
+        width: 150px;
+        height: 57px;
+        flex-shrink: 0;
+        border-radius: 50px;
+        background: #215D0E;
+        color: #FFF;
+        text-align: center;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+    input[type=file]{
+        height: 30px;
+        color: #188D07;
+        
+
+    }
+    form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    /* Footer */
+    .head3{
+        color: #7D7A93;
+        text-align: center;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 24px; /* 46.154% */
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-top: 40px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    .sociallogo{
+        padding: 20px;
+        overflow: hidden;
+    }
+    .sociallogo img{
+        padding-left: 10px;
+        overflow: hidden;
+    }
+    .credits{
+        padding-bottom: 5px;
+        overflow: hidden;
+    }
+    .us{
+        color: #0B3A2E;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        overflow: hidden;
+    }
+    
+   
+}
+</style>
+<body>
+
+    <!-- Navigation bar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="static\images\logo.png" alt="Company Logo" height="60px" width="60px">
+                </div>
+                <div class="company-name">
+                    <h1>Ayurdava</h1>
+                </div>
+            </div>
+        </div>
+        <div class="navbar-center">
+
+            <div class="nav-item">
+                <img src="static\images\25694.png" alt="Person Logo">
+                <a href="/">Home</a>
+            </div>
+
+            <div class="nav-item">
+                <img src="static\images\person.svg" alt="Person Logo">
+                <a href="/whoweare">Who we are</a>
+            </div>
+
+            <div class="nav-item">
+                <img src="static\images\search.svg" alt="Magnifying Glass Logo">
+                <a href="/landing">Identify</a>
+            </div>
+
+            <div class="nav-item">
+                <img src="static\images\pricing2.png" alt="Person Logo">
+                <a href="#">Pricing</a>
+            </div>
+
+            <div class="nav-item">
+                <img src="static\images\Marketplace.svg" alt="Marketplace Logo" height="30px">
+                <a href="#">Marketplace</a>
+            </div>
+            
+        </div>
+        
+        <div class="navbar-right-2">
+            <div class="mobile-menu-button">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="navbar-right">
+            <div class="account">
+                <a href="/your_account">Profile</a>
+            </div>
+        </div>
+    </nav>
+<!-- Instructions -->
+    <div class="ins">
+
+        <div class="heading">
+            Instructions:
+        </div>
+        <div class="focus" data-aos="fade-right">
+                <div class="head1">
+                    Focus on plants:
+                </div>
+                <div class="det1">
+                    Make sure you <strong>focus on the plant.</strong> Use the <strong>flash</strong> if there is not <strong>enough light.</strong>
+                </div>
+        </div>
+        <div class="focus" data-aos="fade-right">
+                <div class="head1">
+                    Focus on single objects:
+                </div>
+                <div class="det1">
+                    Avoid non-plant objects and <strong>focus</strong> on a <strong>single</strong> plant.
+                </div>
+        </div>
+    
+    
+
+    <!-- Upload image -->
+    
+    <div class="upload">
+        <form method="POST" action="/landing" enctype="multipart/form-data">
+            <input type="file" name="image_file">
+            <input type="submit" value="Upload">
+        </form> 
+        <div class="infoaboutplant">
+            <a href="https://docs.google.com/document/d/1YxTj3jrubh_1lDfToDT5cYRbvMDKC4Uy/edit?usp=sharing&ouid=107011862989720542104&rtpof=true&sd=true" target="_blank" style="color: green;">Click here! to know about the plants we can indentify as of now.</a>
+        </div>
+    </div>
+    
+</div>
+<!-- Footer -->
+   <div class="footer">
+        <div class="head3">
+           Let's get social
+           <hr>
+        </div>
+        <div class="sociallogo">
+                <img src="static\images\Google vec.svg" alt="" height="30px" width="30px"> 
+                <img src="static\images\faceboook vec.svg" alt=""height="30px" width="30px">
+        </div>
+        <div class="credits">
+           Developed by
+        </div>
+        <div class="us">
+            Team Phytomind
+        </div>
+   </div>
+   <!-- Aos -->
+   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+   <script>
+     AOS.init(
+     {
+        offset: 100,
+        duration: 1000,
+
+     });
+   </script>
+    <!-- Responsive navbar -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+        // Toggle the active class on the mobile menu button when clicked
+        $(".mobile-menu-button").click(function() {
+            $(this).toggleClass("active");
+            $(".navbar-center, .navbar-right").toggleClass("active");
+        });
+    });
+    </script>
+</body>
+</html>
