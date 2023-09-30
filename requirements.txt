@@ -139,7 +139,7 @@ requests-oauthlib
 requests-toolbelt
 rich
 roboflow
-rpds-py
+
 rsa
 ruamel.yaml
 ruamel.yaml.clib
