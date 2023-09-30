@@ -1,10 +1,10 @@
-Flask==2.0.1
-opencv-python==4.8.0.76
-pymysql==1.0.2
+Flask
+opencv-python
+pymysql
 
-flask-login==0.6.2
-onnxruntime==1.15.1
-opencv-python-headless==4.5.3.56
-werkzeug==2.0.1
-pillow==8.2.0
-numpy==1.21.2
+flask-login
+onnxruntime
+opencv-python-headless
+werkzeug
+pillow
+numpy
