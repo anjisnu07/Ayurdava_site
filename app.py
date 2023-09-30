@@ -25,10 +25,10 @@ class_names =  ['Aloevera','Amla',
 # =======================>Login Start<====================================================================================
 # MySQL database configuration
 db = pymysql.connect(
-    host='Anjisnu.mysql.pythonanywhere-services.com',
-    user='Anjisnu',
-    password='9883185166A',
-    database='Anjisnu$prototype'
+    host='dpg-ckas9jvs0fgc739mluig-a',
+    user='ayurdava_user_user',
+    password='puqmC7NyBsP6kg3Bm9u4vx2z804Ith8x',
+    database='postgres://ayurdava_user_user:puqmC7NyBsP6kg3Bm9u4vx2z804Ith8x@dpg-ckas9jvs0fgc739mluig-a/ayurdava_user'
 )
 # Initialize Flask-Login
 login_manager = LoginManager()
